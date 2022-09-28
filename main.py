@@ -5,6 +5,7 @@ from tkinter import messagebox as mb
 import json
 
 
+
 class Quiz:
 
     def __init__(self):
@@ -35,6 +36,15 @@ class Quiz:
         title.place(x=0, y=2)
 
     def display_question(self):
+        pass
+
+    def next_button(self):
+        pass
+
+    def previous_button(self):
+        pass
+
+    def check_answer(self):
         pass
 
     def radio_buttons(self):
