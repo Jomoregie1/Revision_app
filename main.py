@@ -19,7 +19,6 @@ class Quiz:
         self.correct = 0
 
     def display_result(self):
-
         wrong_count = self.data_size - self.correct
         correct = f"Correct: {self.correct}"
         wrong = f" Wrong: {wrong_count}"
@@ -29,9 +28,11 @@ class Quiz:
 
         mb.showinfo("Result", f"{result} \n {correct} \n {wrong}")
 
-
     def display_title(self):
-        pass
+        title = Label(window, text="Revision Quiz",
+                      width=50, bg="blue", fg="white", font=("ariel", 20, "bold"))
+
+        title.place(x=0, y=2)
 
     def display_question(self):
         pass
@@ -50,4 +51,5 @@ window = tkinter.Tk()
 window.geometry("800x450")
 window.title("Revision Quiz")
 frm = ttk.Frame(window)
+quiz = Quiz()
 window.mainloop()
