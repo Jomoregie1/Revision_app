@@ -1,4 +1,6 @@
+import tkinter
 from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox as mb
 import json
 
@@ -30,3 +32,10 @@ class Quiz:
 
     def buttons(self):
         pass
+
+
+window = tkinter.Tk()
+window.geometry("800x450")
+window.title("Revision Quiz")
+frm = ttk.Frame(window)
+window.mainloop()
