@@ -1,8 +1,32 @@
-# TODO LIST
-# 1. Create a github account. (done)
-# 2. Download git https://git-scm.com/download/win
-# 3. Make sure to create a file where the files for the project will kept.
-# 4. clone the repo " git clone https://github.com/Jomoregie1/Revision_app.git " -- needs to be done on the terminal.
-# 5. Download Pycharm.
-# 6. Look into Tkinter (framework we are using)  https://docs.python.org/3/library/tkinter.html
+from tkinter import *
+from tkinter import messagebox as mb
+import json
 
+
+class Quiz:
+
+    def __init__(self):
+        self.question_no = 0
+        self.display_title()
+        self.display_question()
+        self.opt_selected = IntVar()
+        self.opt_selected = self.radio_buttons()
+        self.display_options()
+        self.buttons()
+        self.data_size = len(question)
+        self.correct = 0
+
+    def display_title(self):
+        pass
+
+    def display_question(self):
+        pass
+
+    def radio_buttons(self):
+        pass
+
+    def display_options(self):
+        pass
+
+    def buttons(self):
+        pass
