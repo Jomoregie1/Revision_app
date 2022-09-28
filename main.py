@@ -18,6 +18,18 @@ class Quiz:
         self.data_size = len(question)
         self.correct = 0
 
+    def display_result(self):
+
+        wrong_count = self.data_size - self.correct
+        correct = f"Correct: {self.correct}"
+        wrong = f" Wrong: {wrong_count}"
+
+        score = int((self.correct / self.data_size) * 100)
+        result = f"Score: {score}%"
+
+        mb.showinfo("Result", f"{result} \n {correct} \n {wrong}")
+
+
     def display_title(self):
         pass
 
