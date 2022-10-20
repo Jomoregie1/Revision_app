@@ -1,0 +1,28 @@
+{
+	"question": [
+		"Q1. What the does term ROM stand for?",
+		"Q2. Which one of these buses are within the structure function processor?",
+		"Q3. Pick one of these is an Optical Storage device?",
+		"Q4. What does the term RAM stand for?",
+		"Q5. What does the term FDE cycle stand for?",
+		"Q6. What does the term CPU stand for?",
+		"Q7. What does the term MAR stand for?",
+		"Q8. Name a piece of magnetic storage?",
+		"Q9. What does the term CIR stand for?",
+		"Q10. Select which one of these are peripherals?"
+	],
+	"answer": [1, 4, 3, 1, 2, 2, 2, 4, 2, 3, 2, 1],
+	"options": [
+		["Random Only Memory", "Real and Memory", "Read and Memory", "Read Only memory"],
+		["Address Bus", "Data Bus", "Control Bus", "all of the above"],
+		["interent", "SSD", "CD", "Memory Stick"],
+		["Random Access Memory", "I dont know", "read access memory", "random alternate memory"],
+		["Fetch Dont Execute", "Fetch Decode Execute", "First Dont Exit", "Flip Dont Change"],
+		["Central Providing Unit", "Central Processing Unit", "Claim Push Under", "Cleaner Pass Under", "Cage pulling Unit"],
+		["Memory Address Resistor", "Memory Address Register", "Mass manged receiver", "none"],
+		["Floppy disk", "Magnetic Tape", "Magnetic Stripes On Card", "All of the above"],
+		["Care interfaced Radio", "Current Intruction Register", "Count in Register", "i dont know"],
+		["keyboard", "Graphics Card", "motherboard", "wire"]
+
+	]
+}
