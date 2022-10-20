@@ -1,19 +1,17 @@
-import tkinter
 from tkinter import *
-from tkinter import ttk
 from tkinter import messagebox as mb
 import json
-
 
 
 class Quiz:
 
     def __init__(self):
-        self.question_no = 0
+
+        self.q_no = 0
         self.display_title()
         self.display_question()
         self.opt_selected = IntVar()
-        self.opt_selected = self.radio_buttons()
+        self.opts = self.radio_buttons()
         self.display_options()
         self.buttons()
         self.data_size = len(question)
@@ -22,44 +20,73 @@ class Quiz:
     def display_result(self):
         wrong_count = self.data_size - self.correct
         correct = f"Correct: {self.correct}"
-        wrong = f" Wrong: {wrong_count}"
-
-        score = int((self.correct / self.data_size) * 100)
+        wrong = f"Wrong: {wrong_count}"
+        score = int(self.correct / self.data_size * 100)
         result = f"Score: {score}%"
+        mb.showinfo("Result", f"{result}\n{correct}\n{wrong}")
 
-        mb.showinfo("Result", f"{result} \n {correct} \n {wrong}")
+    def check_ans(self, q_no):
+        if self.opt_selected.get() == answer[q_no]:
+            return True
+
+    def next_btn(self):
+        if self.check_ans(self.q_no):
+            self.correct += 1
+        self.q_no += 1
+        if self.q_no == self.data_size:
+
+            self.display_result()
+            gui.destroy()
+        else:
+            self.display_question()
+            self.display_options()
+
+    def buttons(self):
+        next_button = Button(gui, text="Next", command=self.next_btn,
+                             width=10, bg="blue", fg="white", font=("ariel", 16, "bold"))
+        next_button.place(x=350, y=380)
+        quit_button = Button(gui, text="Quit", command=gui.destroy,
+                             width=5, bg="black", fg="white", font=("ariel", 16, " bold"))
+        quit_button.place(x=700, y=50)
+
+    def display_options(self):
+        val = 0
+        self.opt_selected.set(0)
+        for option in options[self.q_no]:
+            self.opts[val]['text'] = option
+            val += 1
+
+    def display_question(self):
+        q_no = Label(gui, text=question[self.q_no], width=60,
+                     font=('ariel', 16, 'bold'), anchor='w')
+        q_no.place(x=70, y=100)
 
     def display_title(self):
-        title = Label(window, text="Revision Quiz",
-                      width=50, bg="blue", fg="white", font=("ariel", 20, "bold"))
+
+        title = Label(gui, text="Revision APP",
+                      width=50, bg="green", fg="white", font=("ariel", 20, "bold"))
 
         title.place(x=0, y=2)
 
-    def display_question(self):
-        pass
-
-    def next_button(self):
-        pass
-
-    def previous_button(self):
-        pass
-
-    def check_answer(self):
-        pass
-
     def radio_buttons(self):
-        pass
+        q_list = []
+        y_pos = 150
+        while len(q_list) < 4:
+            radio_btn = Radiobutton(gui, text=" ", variable=self.opt_selected,
+                                    value=len(q_list) + 1, font=("ariel", 14))
+            q_list.append(radio_btn)
+            radio_btn.place(x=100, y=y_pos)
+            y_pos += 40
+        return q_list
 
-    def display_options(self):
-        pass
 
-    def buttons(self):
-        pass
-
-
-window = tkinter.Tk()
-window.geometry("800x450")
-window.title("Revision Quiz")
-frm = ttk.Frame(window)
+gui = Tk()
+gui.geometry("800x450")
+gui.title("Revision Quiz")
+with open('C:/Users/Joseph/Documents/jsonviewer (1) 2022-10-12 13_01_15[1521].txt', encoding="utf8") as f:
+    data = json.load(f)
+question = (data['question'])
+options = (data['options'])
+answer = (data['answer'])
 quiz = Quiz()
-window.mainloop()
+gui.mainloop()
