@@ -83,7 +83,7 @@ class Quiz:
 gui = Tk()
 gui.geometry("800x450")
 gui.title("Revision Quiz")
-with open('C:/Users/Joseph/Documents/jsonviewer (1) 2022-10-12 13_01_15[1521].txt', encoding="utf8") as f:
+with open('Quiz questions.txt', encoding="utf8") as f:
     data = json.load(f)
 question = (data['question'])
 options = (data['options'])
